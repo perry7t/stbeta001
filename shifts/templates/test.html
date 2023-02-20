@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+ <div class="grid-container week"><!--WEEK START-->
+
+                <div><h1>Week {{ shift.Weeknr }}</h1></div>
+
+                <div class="grid-container day"><!--DAY START-->
+
+                    <div><h2>{{ shift.start_date|date:'l j M'}}</h2></div>
+
+                        <!--CARD START-->
+
+                        <a class="nolinkstyle" href="http://www.seventimes.nl" target="_blank">
+
+                        <div class="grid-item card" style="background-color: {{ shift.status.color }}">
+
+                            <div class="flex-container inverse sb">
+                                <div><b>{{ shift.start_date|date:'D j M Y'}}</b></div>
+                                <div>{{ shift.start_time }} - {{ shift.end_time }}</div>
+                            </div>
+
+                                <div>{{ shift.function }} | {{ shift.shift_title }}</div>
+                                <div><i>{{ shift.user.first_name}} {{ shift.user.last_name }}, <b>{{ shift.user.Function_short }}</b></i></div>
+
+                            <div class="flex-container sb">
+                                <div>{{ shift.site.Short_value }} - {{ shift.site }}</div>
+                                <div><i class="bi bi-exclamation-circle-fill"></i></div>
+                            </div>
+
+                        </div>
+
+                        </a>
+
+                        <!--CARD END-->
+
+                </div><!--END GRID CONTAINER DAY-->
+
+            </div><!--END GRID CONTAINER WEEK-->
+
+</body>
+</html>

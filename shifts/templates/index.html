@@ -1,0 +1,54 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+<div class="m20">
+
+<!--WEEK HEADER-->
+
+           {% regroup shifts|dictsort:"weeknr" by weeknr as weeklist %}
+                {% for weeknr in weeklist %}
+            <div class="grid-container weeknr"><h1>Week {{ weeknr.grouper }}</h1></div>
+
+                {% for item in weeknr.list %}
+
+                <!--START DAY-->
+
+                {% regroup shifts|dictsort:"daynr" by daynr as daylist %}
+                    {% for daynr in daylist %}
+
+                            <div class="grid-container day{{ daynr }}"><h1>Day nr {{ daynr.grouper }}</h1></div>
+
+                            {% for item in daylist %}
+
+                            <div class="card day{{ daynr }}" style="background-color: {{ item.status.color }}">
+
+                                <div class="flex-container inverse sb">
+                                    <div><b>{{ item.start_date|date:'D j M Y'}}</b></div>
+                                    <div>{{ item.start_time }} - {{ item.end_time }}</div>
+                                </div>
+
+                                    <div>{{ item.function }} | {{ item.shift_title }}</div>
+                                    <div><i>{{ item.user.first_name}} {{ item.user.last_name }}, <b>{{ item.user.Function_short }}</b></i></div>
+
+                                <div class="flex-container sb">
+                                    <div>{{ item.site.Short_value }} - {{ item.site }}</div>
+                                    <div><i class="bi bi-exclamation-circle-fill"></i></div>
+                                </div>
+
+                        </div>
+
+                        {% endfor %}
+                    {% endfor %}<!--DAY END-->
+
+                {% endfor %}
+            {% endfor %}<!--END WEEK-->
+
+
+</div>
+
+{% endblock %}
+
+
+</body>
+</html>

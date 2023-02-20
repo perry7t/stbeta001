@@ -1,0 +1,137 @@
+
+.bgorange{background-color: #ff8c00;}
+
+.navbar{
+    width: auto;
+    padding: 0;
+}
+
+.m20{
+    margin: 20px;
+}
+
+.top{
+    grid-template-columns: 30px 50px 35px 35px 35px 50px 30px ;
+}
+
+.weeknav{
+    max-width: 350px;
+    border-style: solid;
+    border-color: darkorange;
+    border-radius: 25px;
+    padding: 1px 10px;
+    margin: 10px;
+}
+
+.leftright{
+    color: #ff8c00;
+    font-size: 30px;
+}
+
+.item-a{
+}
+.item-b{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding-top: 6px;
+}
+
+.weeklink{
+    text-decoration: none;
+    color: #155a9f;
+}
+
+.item-c{
+    grid-column-start: 3;
+    text-align: right;
+}
+
+.weeknr h1{
+    text-align: left;
+}
+
+.grid-container {
+    display: grid;
+}
+
+.dayheader{
+  background-color: darkorange;
+  color: #fff;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+h1{
+    font-size: 24px;
+    color: #777;
+    text-align: center;
+    margin:0;
+}
+
+h2{
+    font-size: 18px;
+    color: #777;
+    text-align: center;
+    margin:0;
+}
+
+.card{
+    width: 350px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+    padding: 12px;
+    border-radius: 15px;
+}
+
+.flex-container{
+    display: flex;
+}
+
+/* flexcontainer space between */
+.sb{
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.inverse{
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 2px 5px;
+    margin-bottom: 5px;
+}
+
+.nolinkstyle{
+    text-decoration: none;
+}
+
+.shifts{
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.shift{
+  background-color: #155a9f;
+  color: #fff;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .shifts{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    max-width: 350px;
+   }
+}
+
+@media screen and (min-width: 1400px) {
+  .day1 {grid-column: 1;}
+  .day2 {grid-column: 2;}
+  .day3 {grid-column: 3;}
+  .day4 {grid-column: 4;}
+  .day5 {grid-column: 5;}
+  .day6 {grid-column: 6;}
+  .day0 {grid-column: 7;}
+}
